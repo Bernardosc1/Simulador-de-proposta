@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="initial-content">
+      <div class="conteiner-navbar">
+        <h1>LOGO</h1>
+        <strong>Simulador de proposta</strong>
+      </div>
+      <div class="conteiner-select">
+        <h4 class="text-light">1º Selecione o Empreendimento:</h4>
+        <select name="" id="Select-imovel">
+          <option value="">Selecionar</option>
+          <option value="Opção1">Opção 1</option>
+          <option value="Opção2">Opção 2</option>
+        </select>
+      </div>
+      <div class="conteiner-principal-form">
+        <h4 class="text-light">
+          2º Informe os Valores conforme o Simulador do Portal Caixa:
+        </h4>
+        <label >Valor de venda</label>
+        <div style="position: relative">
+          <input
+            type="text"
+            id="Input-Valor-venda"
+            placeholder="R$ 0,00"
+            oninput="formatCurrency(this)"
+          />
+        </div>
+        <div>
+          <div class="conteiner-field">
+            <div class="input-field">
+              <label >Financiamento</label>
+              <div style="position: relative">
+                <input
+                  type="text"
+                  id="Input-Financiamento"
+                  placeholder="R$ 0,00"
+                  oninput="formatCurrency(this)"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-field">
+              <label >Subsídio</label>
+              <div style="position: relative">
+                <input
+                  type="text"
+                  id="Input-Subsidio"
+                  placeholder="R$ 0,00"
+                  oninput="formatCurrency(this)"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-field">
+              <label >FGTS</label>
+              <div style="position: relative">
+                <input
+                  type="text"
+                  id="Input-FGTS"
+                  placeholder="R$ 0,00"
+                  oninput="formatCurrency(this)"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-field">
+              <label>Renda</label>
+              <div style="position: relative">
+                <input
+                  type="text"
+                  id="Input-Renda"
+                  placeholder="R$ 0,00"
+                  oninput="formatCurrency(this)"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="white-content">
+      <div class="section3">
+        <h4>3º Confira os Parâmetros:</h4>
+        <div class="field-section flex-row">
+          <div class="flex-column text-align">
+            <label>Total Aprovado</label>
+            <input type="number" readonly />
+          </div>
+          <div class="flex-column text-align">
+            <label>Carteira/Poupança</label>
+            <input type="number" readonly />
+          </div>
+          <div class="flex-column text-align">
+            <label>Sinal Sugerido</label>
+            <div class="flex-row">
+              <input type="number" readonly />
+              <button type="button">Copiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section4">
+        <h4>4º Detalhamento:</h4>
+        <div class="field-table">
+          <table>
+            <thead>
+              <tr>
+                <th id="hash" scope="col">###</th>
+                <th id="valor" scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row">
+                <td class="controle">Coordenação</td>
+                <td class="valores"><span id="valor-cordenacao">0</span></td>
+              </tr>
+              <tr>
+                <td class="controle">Gestão</td>
+                <td class="valores" id="valor-gestao">0</td>
+              </tr>
+              <tr>
+                <td class="controle">Imobiliária</td>
+                <td class="valores" id="valor-imobiliaria">0</td>
+              </tr>
+              <tr>
+                <td class="controle">Saldo Construtora</td>
+                <td class="valores" id="saldo-construtora">0</td>
+              </tr>
+              <tr>
+                <td class="controle"><strong>Carteira/Poupança</strong></td>
+                <td class="valores" id="saldo-construtora">
+                  <strong>0</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="section5">
+        <h4>5º Proposta:</h4>
+        <div class="fields">
+          <div class="sinal">
+            <label >Sinal (ATO)</label>
+            <input
+              type="text"
+              placeholder="R$ 0,00"
+              oninput="formatCurrency(this)"
+            />
+          </div>
+          <div class="grafico">
+            <img src="grafico.jpg" width="70%" alt="" />
+            <span>Informe o Sinal</span>
+          </div>
+        </div>
+      </div>
+      <button id="finish-button">Finalizar e Gerar PDF</button>
+      <span id="finish-text">CONDIÇÃO VÁLIDA ATÉ 31 DE OUTUBRO 2024.</span>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
